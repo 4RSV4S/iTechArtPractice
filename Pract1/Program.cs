@@ -106,7 +106,6 @@ namespace Pract1
 
 
             //2.Написать примеры использования всех операторов.
-
             Console.Write($"1 + (-2) = {PreIncrement(h)}\n"); //Инкремент
             Console.Write($"-1 + (-2) = {PreDecrement(h)}\n"); //Декремент
             Console.Write($"-2 + 5 - 8 = {AdditionAndSubtraction(h, h1, h2)}\n"); //Сложение и вычитание
