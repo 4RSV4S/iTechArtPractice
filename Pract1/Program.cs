@@ -104,7 +104,6 @@ namespace Pract1
             dynamic p1 = 123;
             l = (short)f; //явное преобразование типов
 
-
             //2.Написать примеры использования всех операторов.
             Console.Write($"1 + (-2) = {PreIncrement(h)}\n"); //Инкремент
             Console.Write($"-1 + (-2) = {PreDecrement(h)}\n"); //Декремент
