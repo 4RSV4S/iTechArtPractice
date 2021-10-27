@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pract3
 {
-    interface IDisplayable
+    interface IReportGenerator
     {
-        void Display() 
+        protected void UserSort()
         {
-        
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Bogus;
 
 namespace Pract3
@@ -7,12 +8,13 @@ namespace Pract3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             var empl = new Employee();
-            //user.Display();
-            empl.AddRandomAmountOfEmployee();
+            var reportE = new EmployeeReportGenerator();
+            reportE.UserSort(empl.CreateRandomAmountOfUsers());
             var cand = new Candidate();
-            cand.AddRandomAmountOfCandidate();
+            var reportC = new CandidateReportGenerator();
+            Console.WriteLine("\n");
+            reportC.UserSort(cand.CreateRandomAmountOfUsers());
             
 
         }

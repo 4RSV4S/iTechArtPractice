@@ -8,15 +8,9 @@ using Bogus.DataSets;
 
 namespace Pract3
 {
-    public class Candidate : User, IDisplayable
+    public class Candidate : UserFactory, IDisplayable
     {
         public string dismissalReason { get; set; }
-        
-        public Candidate(string firstName, string lastName, string jobTitle, string jobDescription, double jobSalary) : base(firstName, lastName, jobTitle, jobDescription, jobSalary)
-        {
-            dismissalReason = GetDismissalReason();
-        }
-        public Candidate() { }
 
         enum DismissalReason
         {
@@ -66,17 +60,17 @@ namespace Pract3
         public void Display()
         {
             if (dismissalReason == null)
-                Console.WriteLine($"Hello, I am {GetFullName}.\n I want to be a {JobTitle} ({JobDescription}) with a salary from {JobSalary:C2}.\n I haven't worked anywhere before.\n");
+                Console.WriteLine($"Hello, I am {FullName}.\n I want to be a {JobTitle} ({JobDescription}) with a salary from {JobSalary.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))}.\n I haven't worked anywhere before.\n");
             else
-                Console.WriteLine($"Hello, I am {GetFullName}. \n I want to be a {JobTitle} ({JobDescription}) with a salary from {JobSalary:C2}.\n I quit my previous job for a reason of {dismissalReason}.\n");
+                Console.WriteLine($"Hello, I am {FullName}. \n I want to be a {JobTitle} ({JobDescription}) with a salary from {JobSalary.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-us"))}.\n I quit my previous job for a reason of {dismissalReason}.\n");
         }
 
-        public void AddRandomAmountOfCandidate()
+        public Candidate[] CreateRandomAmountOfUsers()
         {
             Random rnd = new Random();
-            int candidateCount = rnd.Next(2, 10);
+            int candidateCount = rnd.Next(10, 30);
             Candidate[] candidates = new Candidate[candidateCount];
-            for (int i = 0; i < candidateCount; i++)
+            for (int i = 0; i < candidates.Length; i++)
             {
                 candidates[i] = new Faker<Candidate>("en")
                     .StrictMode(false)
@@ -84,12 +78,11 @@ namespace Pract3
                     .RuleFor(x => x.LastName, f => f.Name.LastName())
                     .RuleFor(x => x.JobTitle, f => f.Name.JobTitle())
                     .RuleFor(x => x.JobDescription, f => f.Name.JobDescriptor())
-                    .RuleFor(x => x.JobSalary, f => f.Random.Double(100, 5000))
+                    .RuleFor(x => x.JobSalary, f => f.Random.Decimal(100, 5000))
                     .RuleFor(x => x.dismissalReason, f => GetDismissalReason());
                 candidates[i].Display();
             }
+            return candidates;
         }
-
-
     }
 }
