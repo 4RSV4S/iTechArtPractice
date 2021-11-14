@@ -8,55 +8,55 @@ namespace Pract4
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("*********************");
+            Console.WriteLine("TASK 1 (SETS)");
+            Console.WriteLine("*********************");
             TwoSetsOfIntegers sets = new TwoSetsOfIntegers();
             sets.theFirstSet = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             sets.theSecondSet = new[] { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-            sets.Display("1-е множество целых чисел:", sets.theFirstSet);
-            sets.Display("\n2-е множество целых чисел:", sets.theSecondSet);
-            sets.Display("\nНовое множество (пересечение):", sets.Intersection(sets.theFirstSet, sets.theSecondSet));
+            sets.Display("1st set of integers:", sets.theFirstSet);
+            sets.Display("\n2nd set of integers:", sets.theSecondSet);
+            sets.Display("\nNew set (intersection):", sets.Intersection(sets.theFirstSet, sets.theSecondSet));
 
+            Console.WriteLine("\n*********************");
+            Console.WriteLine("TASK 2 (QUEUE)");
+            Console.WriteLine("*********************");
             MyQueue q = new MyQueue();
-            q.queue.Enqueue(3);
-            q.queue.Enqueue(2);
-            q.queue.Enqueue(19);
-            q.queue.Enqueue(4);
-            q.queue.Enqueue(7);
-            q.queue.Enqueue(5);
-            q.queue.Enqueue(8);
-            q.queue.Enqueue(12);
+            q.RandomQueueFilling();
+            q.TheSumBetweenMaxAndMin();
 
-            //Console.WriteLine(q.TheSumBetweenMaxAndMin(q.queue));
+            Console.WriteLine("*********************");
+            Console.WriteLine("TASK 3 (CYCLIC LIST)");
+            Console.WriteLine("*********************");
+            CyclicList cyclicList = new CyclicList();
+            cyclicList.RandomListFilling();
+            cyclicList.Count();
 
-            Queue<int> queue = new Queue<int>();
-            queue.Enqueue(3);
-            queue.Enqueue(2);
-            queue.Enqueue(19);
-            queue.Enqueue(4);
-            queue.Enqueue(7);
-            queue.Enqueue(5);
-            queue.Enqueue(8);
-            queue.Enqueue(12);
-            int sum = 0;
-            while (queue.Count > 0)
-            {
-                if (i != queue.Max())
-                {
-                    queue.Dequeue();
-                }
-                else { break; }
-                //queue.Dequeue();
+            Console.WriteLine("*********************");
+            Console.WriteLine("TASK 4A (BOUBLE SORT)");
+            Console.WriteLine("*********************");
+            SortA<int> a = new SortA<int>();
+            a.RandomListFilling(a.Values);
+            a.Sort(a.Values);
+            a.Display();
 
-            }
-            foreach (int i in queue)
-            {
-                sum += i;
-                if (i == queue.Min())
-                {
-                    break;
-                }
-            }
-            Console.WriteLine(sum);
+            SortA<string> b = new();
+            b.RandomListFilling(b.Values);
+            b.Sort(b.Values);
+            b.Display();
 
+            Console.WriteLine("\n*********************");
+            Console.WriteLine("TASK 4B (QUICK SORT)");
+            Console.WriteLine("*********************");
+            SortB<int> c = new SortB<int>();
+            c.RandomListFilling(c.Values);
+            c.Sort(c.Values, 0, c.Values.Count - 1);
+            c.Display();
+
+            SortB<string> d = new();
+            d.RandomListFilling(d.Values);
+            d.Sort(d.Values, 0, d.Values.Count - 1);
+            d.Display();
         }
     }
 }

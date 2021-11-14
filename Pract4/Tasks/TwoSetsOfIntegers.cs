@@ -22,7 +22,7 @@ namespace Pract4
             Console.WriteLine(s);
             foreach(int i in set)
             {
-                Console.Write(i + " ");
+                Console.Write($"{i} ");
             }
         }
     }
