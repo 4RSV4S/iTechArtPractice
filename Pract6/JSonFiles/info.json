@@ -1,0 +1,90 @@
+﻿{
+  "Shops": [
+    {
+      "Id": 1,
+      "Name": "Onliner",
+      "Description": "Belarusian website with five main sections (technology, auto, real estate, people, forum)",
+      "Phones": [
+        {
+          "Model": "Apple Iphone 12",
+          "OperationSystemType": "IOS",
+          "MarketLaunchDate": "DEC 2020",
+          "Price": "830",
+          "IsAvailable": false,
+          "ShopId": 1
+        },
+        {
+          "Model": "Apple Iphone SE",
+          "OperationSystemType": "IOS",
+          "MarketLaunchDate": "APR 2020",
+          "Price": "630",
+          "IsAvailable": true,
+          "ShopId": 1
+        },
+        {
+          "Model": "Apple Iphone XS",
+          "OperationSystemType": "IOS",
+          "MarketLaunchDate": "SEP 2018",
+          "Price": "430",
+          "IsAvailable": true,
+          "ShopId": 1
+        },
+        {
+          "Model": "Apple Iphone 8",
+          "OperationSystemType": "IOS",
+          "MarketLaunchDate": "SEP 2017",
+          "Price": "400",
+          "IsAvailable": true,
+          "ShopId": 1
+        },
+        {
+          "Model": "Samsung Galaxy S20",
+          "OperationSystemType": "Android",
+          "MarketLaunchDate": "FEB 2020",
+          "Price": "817",
+          "IsAvailable": true,
+          "ShopId": 1
+        },
+        {
+          "Model": "Samsung Galaxy S10",
+          "OperationSystemType": "Android",
+          "MarketLaunchDate": "FEB 2019",
+          "Price": "799",
+          "IsAvailable": true,
+          "ShopId": 1
+        },
+        {
+          "Model": "Samsung Galaxy S9",
+          "OperationSystemType": "Android",
+          "MarketLaunchDate": "MAR 2018",
+          "Price": "509",
+          "IsAvailable": false,
+          "ShopId": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Name": "Yandex Market",
+      "Description": "Enterprise of the Yandex company in the field of e-commerce",
+      "Phones": [
+        {
+          "Model": "Apple Iphone XS",
+          "OperationSystemType": "IOS",
+          "MarketLaunchDate": "SEP 2018",
+          "Price": "430",
+          "IsAvailable": true,
+          "ShopId": 2
+        },
+        {
+          "Model": "Samsung Galaxy S9",
+          "OperationSystemType": "Android",
+          "MarketLaunchDate": "MAR 2018",
+          "Price": "509",
+          "IsAvailable": true,
+          "ShopId": 2
+        }
+      ]
+    }
+  ]
+}
