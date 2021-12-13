@@ -10,13 +10,14 @@ namespace Pract3
         {
             var empl = new Employee();
             var reportE = new EmployeeReportGenerator();
-            reportE.UserSort(empl.CreateRandomAmountOfUsers());
+            var factory = new UserFactory();
+            factory.CreateRandomAmountOfUsers("Employee");
+            reportE.UserSort(factory.employees);
             var cand = new Candidate();
             var reportC = new CandidateReportGenerator();
             Console.WriteLine("\n");
-            reportC.UserSort(cand.CreateRandomAmountOfUsers());
-            
-
+            factory.CreateRandomAmountOfUsers("Candidate");
+            reportC.UserSort(factory.candidates);
         }
     }
 }

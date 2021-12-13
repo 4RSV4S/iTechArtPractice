@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pract3
 {
-    interface IReportGenerator
+    interface IReportGenerator<T>
     {
-        protected void UserSort()
-        {
-
-        }
+        void UserSort(T[] array);
     }
 }

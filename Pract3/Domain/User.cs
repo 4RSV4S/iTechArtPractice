@@ -7,20 +7,20 @@ using Bogus;
 
 namespace Pract3
 {
-    public abstract class UserFactory
+    public abstract class User
     {
-        public string Id 
-        { 
+        public string Id
+        {
             get
             {
-               return Guid.NewGuid().ToString();
+                return Guid.NewGuid().ToString();
             }
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName 
-        { 
-            get 
+        public string FullName
+        {
+            get
             {
                 return $"{FirstName} {LastName}";
             }
