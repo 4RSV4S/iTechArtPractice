@@ -6,35 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pract4
 {
-    class SortA<T> : ISortable<T>, IDisplayable
+    public class SortA<T> : ListFilling, ISortable<T>, IDisplayable where T : IComparable<T>
     {
-        public List<T> Values = new List<T>();
+        public List<T> Values = new();
 
-        public void RandomListFilling(List<int> Values)
+        public void Sort(params object[] arguments)
         {
-            Random rnd = new Random();
-            int listSize = rnd.Next(5, 15);
-            Console.WriteLine("A source list of integers:");
-            for (int i = 0; i < listSize; i++)
-            {
-                Values.Add(rnd.Next(0, 99));
-                Console.Write($"{Values[i]} ");
-            }
-        }
-        public void RandomListFilling(List<string> Values)
-        {
-            Random rnd = new Random();
-            int listSize = rnd.Next(5, 15);
-            Console.WriteLine("\nA source list of strings:");
-            for (int i = 0; i < listSize; i++)
-            {
-                var str = new Bogus.DataSets.Lorem("en");
-                Values.Add(str.Word());
-                Console.Write($"{Values[i]} ");
-            }
-        }
-        public void Sort<T>(List<T> Values) where T : IComparable<T>
-        {
+            List<T> Values = (List<T>)arguments[0];
             int lenJ;
             int lenJAddOne;
             for (var i = 1; i < Values.Count; i++)

@@ -8,9 +8,6 @@ namespace Pract4
 {
     interface IDisplayable
     {
-        void Display()
-        {
-
-        }
+        void Display();
     }
 }

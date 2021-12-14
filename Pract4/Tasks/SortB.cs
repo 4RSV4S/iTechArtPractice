@@ -6,34 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pract4
 {
-    class SortB<T> : ISortable<T>, IDisplayable
+    class SortB<T> : ListFilling, ISortable<T>, IDisplayable where T : IComparable<T>
     {
-        public List<T> Values = new List<T>();
+        public List<T> Values = new();
 
-        public void RandomListFilling(List<int> Values)
-        {
-            Random rnd = new Random();
-            int listSize = rnd.Next(5, 15);
-            Console.WriteLine("A source list of integers:");
-            for (int i = 0; i < listSize; i++)
-            {
-                Values.Add(rnd.Next(0, 99));
-                Console.Write($"{Values[i]} ");
-            }
-        }
-        public void RandomListFilling(List<string> Values)
-        {
-            Random rnd = new Random();
-            int listSize = rnd.Next(5, 15);
-            Console.WriteLine("\nA source list of strings:");
-            for (int i = 0; i < listSize; i++)
-            {
-                var str = new Bogus.DataSets.Hacker("en");
-                Values.Add(str.Noun());
-                Console.Write($"{Values[i]} ");
-            }
-        }
-        private int Partrition<T>(List<T> Values, int first, int pivot) where T : IComparable<T>
+        private int Partrition(List<T> Values, int first, int pivot)
         {
             int i = first;
             int lenJ;
@@ -67,8 +44,12 @@ namespace Pract4
             return i - 1;                       
         }
 
-        public void Sort<T>(List<T> Values, int first, int pivot) where T : IComparable<T>
+        public void Sort(params object[] arguments) 
         {
+            List<T> Values = (List<T>)arguments[0];
+            int first = (int)arguments[1];
+            int pivot = (int)arguments[2];
+
             if (first >= pivot)
             {
                 return;

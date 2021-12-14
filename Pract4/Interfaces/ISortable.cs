@@ -8,20 +8,6 @@ namespace Pract4
 {
     interface ISortable<T>
     {
-        void Sort()
-        {
-            List<T> Values;
-
-            void RandomListFilling(List<T> Values)
-            {
-
-            }
-
-            void Sort(List<T> Values)
-            {
-
-            }
-
-        }
+        void Sort(params object[] arguments);
     }
 }

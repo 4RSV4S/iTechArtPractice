@@ -6,6 +6,7 @@ namespace Pract4
 {
     class Program 
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("*********************");
@@ -35,13 +36,14 @@ namespace Pract4
             Console.WriteLine("*********************");
             Console.WriteLine("TASK 4A (BOUBLE SORT)");
             Console.WriteLine("*********************");
+
             SortA<int> a = new SortA<int>();
-            a.RandomListFilling(a.Values);
+            a.Values = a.RandomListFilling(a.Values);
             a.Sort(a.Values);
             a.Display();
 
             SortA<string> b = new();
-            b.RandomListFilling(b.Values);
+            b.Values = b.RandomListFilling(b.Values);
             b.Sort(b.Values);
             b.Display();
 
@@ -49,12 +51,12 @@ namespace Pract4
             Console.WriteLine("TASK 4B (QUICK SORT)");
             Console.WriteLine("*********************");
             SortB<int> c = new SortB<int>();
-            c.RandomListFilling(c.Values);
+            c.Values = c.RandomListFilling(c.Values);
             c.Sort(c.Values, 0, c.Values.Count - 1);
             c.Display();
 
             SortB<string> d = new();
-            d.RandomListFilling(d.Values);
+            d.Values = d.RandomListFilling(d.Values);
             d.Sort(d.Values, 0, d.Values.Count - 1);
             d.Display();
         }
