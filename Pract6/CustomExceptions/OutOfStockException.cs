@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Pract6
 {
-    public class OutOutStockException : Exception
+    public class OutOfStockException : Exception
     {
-        public OutOutStockException()
+        public OutOfStockException()
         {
         }
-        public OutOutStockException(string message) 
+        public OutOfStockException(string message) 
             : base(message)
         {
         }
-        public OutOutStockException(string message, Exception inner)
+        public OutOfStockException(string message, Exception inner)
             : base(message, inner)
         {
         }

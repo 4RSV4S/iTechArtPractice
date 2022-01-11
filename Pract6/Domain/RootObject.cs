@@ -71,11 +71,11 @@ namespace Pract6
                                 }
                                 else
                                 {
-                                    throw new OutOutStockException();
+                                    throw new OutOfStockException();
                                 }
                             }
                         }
-                        catch(OutOutStockException)
+                        catch(OutOfStockException)
                         {
                             logger.LogError("This mobile phone is out of stock.");
                         }
