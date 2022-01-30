@@ -50,7 +50,7 @@ namespace Pract12
         }
         public IWebElement GetDailyCaloriesAmount()
         {
-            IWebElement caloriesAmount = driver.FindElement(By.XPath("//span[contains(text(), 'чтобы вес не менялся')]/ancestor::tr[@class='res_row']/following-sibling::tr/td"));
+            IWebElement caloriesAmount = driver.FindElement(By.XPath("//*[@class='result']/*/tr[@class='res_row'][2]/td"));
             return caloriesAmount;
         }
     }
