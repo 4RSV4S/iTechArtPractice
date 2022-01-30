@@ -1,0 +1,12 @@
+Task 1 CSS Locators
+	a. #123
+	b. .arrow
+	c. #123
+	d. h1>span
+	e. span[value^='12']
+Task 2 XPath Locators
+	a. //*[contains(text(), 'Test')][2]
+	b. //*[text() = 'Test' and @ids]
+	c. //*[contains(text(), 'Title 2')]
+	d. //h1/*[contains(text(), 'Title 3')]
+	e. //*[contains(text(), 'Title 2')]/ancestor::div/div[2]/*[@class='arrow']	
