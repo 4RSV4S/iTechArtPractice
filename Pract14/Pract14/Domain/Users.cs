@@ -9,10 +9,10 @@ namespace Pract14
 {
     public static class Users
     {
-        public static User StandardUser = new() { Username = "standard_user" };
-        public static User LockedOutUser = new() { Username = "locked_out_user" };
-        public static User ProblemUser = new() { Username = "problem_user" };
-        public static User PerfomanceGlitchUser = new() { Username = "performance_glitch_user" };
+        public static User StandardUser = new User { Username = "standard_user" };
+        public static User LockedOutUser = new User { Username = "locked_out_user" };
+        public static User ProblemUser = new User { Username = "problem_user" };
+        public static User PerfomanceGlitchUser = new User { Username = "performance_glitch_user" };
 
         static Users()
         {
