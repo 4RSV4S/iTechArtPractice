@@ -9,7 +9,7 @@ namespace Pract14
     {
         private static readonly By Link_ShoppingCartBy = By.Id("shopping_cart_container");
         private static readonly By DropDown_ProductSortBy = By.ClassName("product_sort_container");
-        private static readonly By Div_InventoryItemPriceBy = By.ClassName("inventory_item_price");
+        private static readonly By Div_ItemPricesBy = By.ClassName("inventory_item_price");
 
         public InventoryPage(IWebDriver driver) : base(driver)
         {
@@ -23,16 +23,16 @@ namespace Pract14
         public List<double> GetPricesList()
         {
             var priceList = new List<double>();
-            foreach (var p in InventoryItemPrices)
+            foreach (var price in ItemPrices)
             {
-                priceList.Add(Convert.ToDouble(p.Text.Replace('$',' ')));
+                priceList.Add(Convert.ToDouble(price.Text.Replace('$',' ').Replace('.',',')));
             }
             return priceList;
         }
 
         public IWebElement Link_ShoppingCart => Driver.FindElement(Link_ShoppingCartBy);
         public SelectElement DropDown_ProductSort =>  new SelectElement(Driver.FindElement(DropDown_ProductSortBy));
-        public IEnumerable<IWebElement> InventoryItemPrices => Driver.FindElements(Div_InventoryItemPriceBy);
+        public IEnumerable<IWebElement> ItemPrices => Driver.FindElements(Div_ItemPricesBy);
         
 
     }
