@@ -41,17 +41,5 @@ namespace Pract14
             string expectedErrorMsg = "Epic sadface: Username and password do not match any user in this service";
             Assert.AreEqual(expectedErrorMsg, actualErrorMsg);
         }
-
-        [Test]
-        public void testtest()
-        {
-            LoginPage loginPage = new LoginPage(Driver);
-            loginPage.LogInAs(Users.StandardUser.Username, Configurator.Password);
-            InventoryPage page = new InventoryPage(Driver);
-            page.DropDown_ProductSort.SelectByValue("lohi");
-            var actualSort = page.GetPricesList();
-            var expectedSort = actualSort.OrderByDescending(s => s);
-            Assert.IsTrue(expectedSort.SequenceEqual(actualSort));
-        }
     }
 }
