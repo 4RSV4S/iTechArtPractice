@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NUnit.Framework;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Pract14
 {
@@ -46,6 +40,18 @@ namespace Pract14
             string actualErrorMsg = loginPage.Text_ErrorMessage.Text;
             string expectedErrorMsg = "Epic sadface: Username and password do not match any user in this service";
             Assert.AreEqual(expectedErrorMsg, actualErrorMsg);
+        }
+
+        [Test]
+        public void testtest()
+        {
+            LoginPage loginPage = new LoginPage(Driver);
+            loginPage.LogInAs(Users.StandardUser.Username, Configurator.Password);
+            InventoryPage page = new InventoryPage(Driver);
+            page.DropDown_ProductSort.SelectByValue("lohi");
+            var actualSort = page.GetPricesList();
+            var expectedSort = actualSort.OrderByDescending(s => s);
+            Assert.IsTrue(expectedSort.SequenceEqual(actualSort));
         }
     }
 }
