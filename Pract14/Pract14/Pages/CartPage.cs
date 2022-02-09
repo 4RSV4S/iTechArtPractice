@@ -16,7 +16,7 @@ namespace Pract14.Pages
             Driver.Navigate().GoToUrl(Configurator.BaseURL + Configurator.InventoryPage_END_POINT);
         }
 
-        public IWebElement Button_ContinueShopping = Driver.FindElement(Button_ContinueShoppingBy);
-        public IWebElement Button_Checkout = Driver.FindElement(Button_CheckoutBy);
+        public IWebElement Button_ContinueShopping => Driver.FindElement(Button_ContinueShoppingBy);
+        public IWebElement Button_Checkout => Driver.FindElement(Button_CheckoutBy);
     }
 }
