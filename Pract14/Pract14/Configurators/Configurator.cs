@@ -19,6 +19,7 @@ namespace Pract14
         public static string Password => Configuration[nameof(Password)];
         public static string LoginPage_END_POINT => Configuration[nameof(LoginPage_END_POINT)];
         public static string InventoryPage_END_POINT => Configuration[nameof(InventoryPage_END_POINT)];
+        public static string CartPage_END_POINT => Configuration[nameof(CartPage_END_POINT)];
 
         static Configurator()
         {
