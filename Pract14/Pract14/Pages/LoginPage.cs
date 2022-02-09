@@ -26,6 +26,12 @@ namespace Pract14
             Input_Password.SendKeys(password);
             Button_LogIn.Click();
         }
+        public void LogInAs(User user)
+        {
+            Input_Username.SendKeys(user.Username);
+            Input_Password.SendKeys(user.Password);
+            Button_LogIn.Click();
+        }
 
         public IWebElement Input_Username => Driver.FindElement(Input_UsernameBy);
         public IWebElement Input_Password => Driver.FindElement(Input_PasswordBy);
