@@ -18,7 +18,7 @@ namespace Pract14
         public void LogIn_ExistingUser_GoToTheInventoryPage(User user)
         {
             LoginPage loginPage = new LoginPage(Driver);
-            loginPage.LogInAs(user.Username, user.Password);
+            loginPage.LogInAs(user);
             Assert.AreEqual(Configurator.BaseURL + Configurator.InventoryPage_END_POINT, Driver.Url);
         }
 
