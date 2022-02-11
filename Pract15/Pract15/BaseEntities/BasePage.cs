@@ -12,9 +12,9 @@ namespace Pract15
 
         protected abstract void OpenPage();
 
-        public BasePage(IWebDriver Driver)
+        public BasePage(IWebDriver driver)
         {
-            Driver = Driver;
+            Driver = driver;
             OpenPage();
         }
     }
