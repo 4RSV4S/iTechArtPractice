@@ -8,7 +8,8 @@ namespace Pract15
 {
     public class TVPage : BasePage
     {
-        private static readonly By CheckBox_AddToComparisonBy = By.XPath("//*[contains(@title,'В сравнени') and not(ancestor::div[@class='schema-product schema-product_children'])]");
+        private static readonly By Label_AddToComparisonBy = By.XPath("//*[contains(@title,'В сравнени') and not(ancestor::div[@class='schema-product schema-product_children'])]");
+        private static readonly By Input_AddToComparisonBy = By.XPath("//*[contains(@title,'В сравнени') and not(ancestor::div[@class='schema-product schema-product_children'])]//input");
         private string END_POINT = "tv";
 
         public TVPage(IWebDriver driver) : base(driver)
@@ -22,6 +23,7 @@ namespace Pract15
             Driver.Navigate().GoToUrl(BaseURL + END_POINT);
         }
 
-        public IList<IWebElement> CheckBoxList => Driver.FindElements(CheckBox_AddToComparisonBy);
+        public IList<IWebElement> LabelList => Driver.FindElements(Label_AddToComparisonBy);
+        public IList<IWebElement> InputList => Driver.FindElements(Input_AddToComparisonBy);
     }
 }

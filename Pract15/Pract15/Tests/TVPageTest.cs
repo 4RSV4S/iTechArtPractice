@@ -17,10 +17,12 @@ namespace Pract15.Tests
         {
             TVPage tvPage = new TVPage(Driver);
 
-            tvPage.CheckBoxList[0].Click();
-            Assert.AreEqual(tvPage.CheckBoxList[0].GetAttribute("title"), "В сравнении");
-            tvPage.CheckBoxList[1].Click();
-            Assert.AreEqual(tvPage.CheckBoxList[1].GetAttribute("title"), "В сравнении");
+            tvPage.LabelList[0].Click();
+            Assert.IsTrue(tvPage.InputList[0].Selected);
+            //Assert.AreEqual(tvPage.LabelList[0].GetAttribute("title"), "В сравнении");
+            //tvPage.InputList[0].Click();
+            tvPage.LabelList[1].Click();
+            Assert.AreEqual(tvPage.LabelList[1].GetAttribute("title"), "В сравнении");
 
             ComparisonPage comparisonPage = new ComparisonPage(Driver);
             comparisonPage.Button_Compare.Click();
