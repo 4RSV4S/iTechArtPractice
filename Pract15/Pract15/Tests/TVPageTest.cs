@@ -19,13 +19,13 @@ namespace Pract15.Tests
 
             tvPage.LabelList[0].Click();
             Assert.IsTrue(tvPage.InputList[0].Selected);
-            //Assert.AreEqual(tvPage.LabelList[0].GetAttribute("title"), "В сравнении");
-            //tvPage.InputList[0].Click();
             tvPage.LabelList[1].Click();
-            Assert.AreEqual(tvPage.LabelList[1].GetAttribute("title"), "В сравнении");
+            Assert.IsTrue(tvPage.InputList[1].Selected);
 
             ComparisonPage comparisonPage = new ComparisonPage(Driver);
             comparisonPage.Button_Compare.Click();
+            comparisonPage.MoveToElement(comparisonPage.Span_Cell_ScreenВiagonal);
+            Thread.Sleep(6000);
         }
     }
 }
