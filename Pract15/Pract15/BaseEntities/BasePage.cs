@@ -10,12 +10,9 @@ namespace Pract15
         protected string BaseURL = "https://catalog.onliner.by/";
         protected static IWebDriver Driver;
 
-        protected abstract void OpenPage();
-
-        public BasePage(IWebDriver Driver)
+        public BasePage(IWebDriver driver)
         {
-            Driver = Driver;
-            OpenPage();
+            Driver = driver;
         }
     }
 }
