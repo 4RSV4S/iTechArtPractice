@@ -16,10 +16,17 @@ namespace Pract15
             Driver = driver;
         }
 
+<<<<<<< HEAD
         public void MoveToElement(IWebElement element)
         {
             Actions action = new Actions(Driver);
             action.MoveToElement(element).Click().Build().Perform();
+=======
+        public BasePage(IWebDriver driver)
+        {
+            Driver = driver;
+            OpenPage();
+>>>>>>> 8c4371e21b28f04dcd916cd25945d5013b34fc54
         }
     }
 }
