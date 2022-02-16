@@ -11,46 +11,46 @@ namespace Pract12
 {
     public class CalcCaloriesPage
     {
-        private IWebDriver driver;
+        private IWebDriver Driver;
 
         public CalcCaloriesPage(IWebDriver driver)
         {
-            this.driver = driver;
+            this.Driver = driver;
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
         public void OpenCalcCaloriesPage()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.Navigate().GoToUrl("https://www.calc.ru/kalkulyator-kalorii.html");
+            Driver.Navigate().GoToUrl("https://www.calc.ru/kalkulyator-kalorii.html");
         }
         public void ChoosePhysicalActivityDegree(string degree)
         {
-            IWebElement select = driver.FindElement(By.Name("activity"));
+            IWebElement select = Driver.FindElement(By.Name("activity"));
             SelectElement selectElement = new SelectElement(select);
             selectElement.SelectByText(degree);
         }
         public void EnterAge(string age)
         {
-            IWebElement ageTextField = driver.FindElement(By.Name("age"));
+            IWebElement ageTextField = Driver.FindElement(By.Name("age"));
             ageTextField.SendKeys(age);
         }
         public void EnterWeight(string weight)
         {
-            IWebElement weightTextField = driver.FindElement(By.Name("weight"));
+            IWebElement weightTextField = Driver.FindElement(By.Name("weight"));
             weightTextField.SendKeys(weight);
         }
         public void EnterHeight(string height)
         {
-            IWebElement heightTextField = driver.FindElement(By.Name("sm"));
+            IWebElement heightTextField = Driver.FindElement(By.Name("sm"));
             heightTextField.SendKeys(height);
         }
         public void ClickSubmitBttn()
         {
-            IWebElement submitBttn = driver.FindElement(By.Id("submit"));
+            IWebElement submitBttn = Driver.FindElement(By.Id("submit"));
             submitBttn.Click();
         }
         public IWebElement GetDailyCaloriesAmount()
         {
-            IWebElement caloriesAmount = driver.FindElement(By.XPath("//*[@class='result']/*/tr[@class='res_row'][2]/td"));
+            IWebElement caloriesAmount = Driver.FindElement(By.XPath("//*[@class='result']/*/tr[@class='res_row'][2]/td"));
             return caloriesAmount;
         }
     }

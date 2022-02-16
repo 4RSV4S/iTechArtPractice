@@ -11,56 +11,56 @@ namespace Pract12
 {
     public class CalcLaminatePage
     {
-        private IWebDriver driver;
+        private IWebDriver Driver;
 
         public CalcLaminatePage(IWebDriver driver)
         {
-            this.driver = driver;
+            this.Driver = driver;
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         public void OpenCalcLaminatePage()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.Navigate().GoToUrl("https://calc.by/building-calculators/laminate.html");
+            Driver.Navigate().GoToUrl("https://calc.by/building-calculators/laminate.html");
         }
 
         public void ChooseLayingMethod(string method)
         {
-            IWebElement dropDown = driver.FindElement(By.Id("laying_method_laminate"));
+            IWebElement dropDown = Driver.FindElement(By.Id("laying_method_laminate"));
             SelectElement selectElement = new SelectElement(dropDown);
             selectElement.SelectByText(method);
         }
 
         public void EnterRoomLength(string length)
         {
-            IWebElement textField = driver.FindElement(By.Id("ln_room_id"));
+            IWebElement textField = Driver.FindElement(By.Id("ln_room_id"));
             textField.Clear();
             textField.SendKeys(length);
         }
 
         public void EnterRoomWidth(string width)
         {
-            IWebElement textField = driver.FindElement(By.Id("wd_room_id"));
+            IWebElement textField = Driver.FindElement(By.Id("wd_room_id"));
             textField.Clear();
             textField.SendKeys(width);
         }
 
         public void EnterPanelLength(string length)
         {
-            IWebElement textField = driver.FindElement(By.Id("ln_lam_id"));
+            IWebElement textField = Driver.FindElement(By.Id("ln_lam_id"));
             textField.Clear();
             textField.SendKeys(length);
         }
         public void EnterPanelWidth(string width)
         {
-            IWebElement textField = driver.FindElement(By.Id("wd_lam_id"));
+            IWebElement textField = Driver.FindElement(By.Id("wd_lam_id"));
             textField.Clear();
             textField.SendKeys(width);
         }
 
         public void ChooseLayingDirection(string laying)
         {
-            IList <IWebElement> radioBttns = driver.FindElements(By.CssSelector(".cl-ln-value [type=radio]"));
+            IList <IWebElement> radioBttns = Driver.FindElements(By.CssSelector(".cl-ln-value [type=radio]"));
 
             switch (laying)
             {
@@ -81,19 +81,19 @@ namespace Pract12
 
         public void ClickCalculateButton()
         {
-            IWebElement calcBttn = driver.FindElement(By.XPath("//a[text()='Рассчитать']"));
+            IWebElement calcBttn = Driver.FindElement(By.XPath("//a[text()='Рассчитать']"));
             calcBttn.Click();
         }
 
         public IWebElement GetRequiredBoardsNumber()
         {
-            IWebElement spanResult = driver.FindElement(By.XPath("//div[text()='Требуемое количество досок ламината: ']/child::span"));
+            IWebElement spanResult = Driver.FindElement(By.XPath("//div[text()='Требуемое количество досок ламината: ']/child::span"));
             return spanResult;
         }
 
         public IWebElement GetPackagesNumber()
         {
-            IWebElement spanResult = driver.FindElement(By.XPath("//div[text()='Количество упаковок ламината: ']/child::span"));
+            IWebElement spanResult = Driver.FindElement(By.XPath("//div[text()='Количество упаковок ламината: ']/child::span"));
             return spanResult;
         }
             
