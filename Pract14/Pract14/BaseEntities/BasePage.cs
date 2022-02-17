@@ -9,8 +9,8 @@ namespace Pract14
 {
     public abstract class BasePage
     {
-        protected static IWebDriver Driver;
-        protected static readonly By Button_SidebarBy = By.Id("react-burger-menu-btn");
+        protected IWebDriver Driver;
+        protected readonly By Button_SidebarBy = By.Id("react-burger-menu-btn");
 
         protected abstract void OpenPage();
 

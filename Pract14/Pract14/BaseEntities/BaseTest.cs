@@ -11,7 +11,7 @@ namespace Pract14
 {
     public class BaseTest
     {
-        [ThreadStatic] protected static IWebDriver Driver;
+        protected IWebDriver Driver;
 
         [SetUp]
         public void Setup()
