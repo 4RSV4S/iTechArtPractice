@@ -5,10 +5,10 @@ namespace Pract14
 {
     public class LoginPage : BasePage
     {
-        private static readonly By Input_UsernameBy = By.Id("user-name");
-        private static readonly By Input_PasswordBy = By.Id("password");
-        private static readonly By Button_LogInBy = By.Id("login-button");
-        private static readonly By Text_ErrorMessageBy = By.XPath("//*[@class='error-message-container error']/h3[@data-test='error']");
+        private readonly By Input_UsernameBy = By.Id("user-name");
+        private readonly By Input_PasswordBy = By.Id("password");
+        private readonly By Button_LogInBy = By.Id("login-button");
+        private readonly By Text_ErrorMessageBy = By.XPath("//*[@class='error-message-container error']/h3[@data-test='error']");
 
         public LoginPage(IWebDriver driver) : base(driver)
         {

@@ -7,10 +7,10 @@ namespace Pract14
 {
     public class InventoryPage : BasePage
     {
-        private static readonly By Link_ShoppingCartBy = By.ClassName("shopping_cart_link");
-        private static readonly By DropDown_ProductSortBy = By.ClassName("product_sort_container");
-        private static readonly By Div_ItemPricesBy = By.ClassName("inventory_item_price");
-        private static readonly By Div_ItemNamesBy = By.ClassName("inventory_item_name");
+        private readonly By Link_ShoppingCartBy = By.ClassName("shopping_cart_link");
+        private readonly By DropDown_ProductSortBy = By.ClassName("product_sort_container");
+        private readonly By Div_ItemPricesBy = By.ClassName("inventory_item_price");
+        private readonly By Div_ItemNamesBy = By.ClassName("inventory_item_name");
 
         public InventoryPage(IWebDriver driver) : base(driver)
         {

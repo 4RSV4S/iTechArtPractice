@@ -6,9 +6,9 @@ namespace Pract14
 {
     public class CartPage : BasePage
     {
-        private static readonly By Button_ContinueShoppingBy = By.Id("continue-shopping");
-        private static readonly By Button_CheckoutBy = By.Id("checkout");
-        private static readonly By Div_CartItemBy = By.CssSelector(".cart_list .cart_item");
+        private readonly By Button_ContinueShoppingBy = By.Id("continue-shopping");
+        private readonly By Button_CheckoutBy = By.Id("checkout");
+        private readonly By Div_CartItemBy = By.CssSelector(".cart_list .cart_item");
         public CartPage(IWebDriver driver) : base(driver)
         {
         }
