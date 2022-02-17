@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
 
 namespace Pract12
 {
@@ -19,46 +15,52 @@ namespace Pract12
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        public void OpenCalcLaminatePage()
+        public CalcLaminatePage OpenCalcLaminatePage()
         {
             Driver.Navigate().GoToUrl("https://calc.by/building-calculators/laminate.html");
+            return this;
         }
 
-        public void ChooseLayingMethod(string method)
+        public CalcLaminatePage ChooseLayingMethod(string method)
         {
             IWebElement dropDown = Driver.FindElement(By.Id("laying_method_laminate"));
             SelectElement selectElement = new SelectElement(dropDown);
             selectElement.SelectByText(method);
+            return this;
         }
 
-        public void EnterRoomLength(string length)
+        public CalcLaminatePage EnterRoomLength(string length)
         {
             IWebElement textField = Driver.FindElement(By.Id("ln_room_id"));
             textField.Clear();
             textField.SendKeys(length);
+            return this;
         }
 
-        public void EnterRoomWidth(string width)
+        public CalcLaminatePage EnterRoomWidth(string width)
         {
             IWebElement textField = Driver.FindElement(By.Id("wd_room_id"));
             textField.Clear();
             textField.SendKeys(width);
+            return this;
         }
 
-        public void EnterPanelLength(string length)
+        public CalcLaminatePage EnterPanelLength(string length)
         {
             IWebElement textField = Driver.FindElement(By.Id("ln_lam_id"));
             textField.Clear();
             textField.SendKeys(length);
+            return this;
         }
-        public void EnterPanelWidth(string width)
+        public CalcLaminatePage EnterPanelWidth(string width)
         {
             IWebElement textField = Driver.FindElement(By.Id("wd_lam_id"));
             textField.Clear();
             textField.SendKeys(width);
+            return this;
         }
 
-        public void ChooseLayingDirection(string laying)
+        public CalcLaminatePage ChooseLayingDirection(string laying)
         {
             IList <IWebElement> radioBttns = Driver.FindElements(By.CssSelector(".cl-ln-value [type=radio]"));
 
@@ -77,12 +79,14 @@ namespace Pract12
                     radioBttns[3].Click();
                     break;
             }
+            return this;
         }
 
-        public void ClickCalculateButton()
+        public CalcLaminatePage ClickCalculateButton()
         {
             IWebElement calcBttn = Driver.FindElement(By.XPath("//a[text()='Рассчитать']"));
             calcBttn.Click();
+            return this;
         }
 
         public IWebElement GetRequiredBoardsNumber()

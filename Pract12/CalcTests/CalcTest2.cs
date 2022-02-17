@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
 
 namespace Pract12.CalcTests
 {
     class CalcTest2
     {
-        private IWebDriver driver;
+        private IWebDriver Driver;
 
         [SetUp]
         public void Setup()
         {
-            driver = new ChromeDriver();
+            Driver = new ChromeDriver();
         }
 
         [Test]
         public void Test2()
         {
-            CalcCaloriesPage page = new CalcCaloriesPage(driver);
+            CalcCaloriesPage page = new CalcCaloriesPage(Driver);
             page.OpenCalcCaloriesPage();
-            Assert.AreEqual("https://www.calc.ru/kalkulyator-kalorii.html", driver.Url);
+            Assert.AreEqual("https://www.calc.ru/kalkulyator-kalorii.html", Driver.Url);
             page.ChoosePhysicalActivityDegree("5 раз в неделю");
             page.EnterAge("35");
             page.EnterWeight("85");
@@ -37,7 +31,7 @@ namespace Pract12.CalcTests
         [TearDown]
         public void TearDown()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }

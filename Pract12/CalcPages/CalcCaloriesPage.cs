@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
 
 namespace Pract12
 {
@@ -18,35 +13,41 @@ namespace Pract12
             this.Driver = driver;
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
-        public void OpenCalcCaloriesPage()
+        public CalcCaloriesPage OpenCalcCaloriesPage()
         {
             Driver.Navigate().GoToUrl("https://www.calc.ru/kalkulyator-kalorii.html");
+            return this;
         }
-        public void ChoosePhysicalActivityDegree(string degree)
+        public CalcCaloriesPage ChoosePhysicalActivityDegree(string degree)
         {
             IWebElement select = Driver.FindElement(By.Name("activity"));
             SelectElement selectElement = new SelectElement(select);
             selectElement.SelectByText(degree);
+            return this;
         }
-        public void EnterAge(string age)
+        public CalcCaloriesPage EnterAge(string age)
         {
             IWebElement ageTextField = Driver.FindElement(By.Name("age"));
             ageTextField.SendKeys(age);
+            return this;
         }
-        public void EnterWeight(string weight)
+        public CalcCaloriesPage EnterWeight(string weight)
         {
             IWebElement weightTextField = Driver.FindElement(By.Name("weight"));
             weightTextField.SendKeys(weight);
+            return this;
         }
-        public void EnterHeight(string height)
+        public CalcCaloriesPage EnterHeight(string height)
         {
             IWebElement heightTextField = Driver.FindElement(By.Name("sm"));
             heightTextField.SendKeys(height);
+            return this;
         }
-        public void ClickSubmitBttn()
+        public CalcCaloriesPage ClickSubmitBttn()
         {
             IWebElement submitBttn = Driver.FindElement(By.Id("submit"));
             submitBttn.Click();
+            return this;
         }
         public IWebElement GetDailyCaloriesAmount()
         {
