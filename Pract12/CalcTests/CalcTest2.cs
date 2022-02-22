@@ -18,13 +18,15 @@ namespace Pract12.CalcTests
         public void Test2()
         {
             CalcCaloriesPage page = new CalcCaloriesPage(Driver);
-            page.OpenCalcCaloriesPage();
+            
+            page.OpenCalcCaloriesPage()
+                .ChoosePhysicalActivityDegree("5 раз в неделю")
+                .EnterAge("35")
+                .EnterWeight("85")
+                .EnterHeight("185")
+                .ClickSubmitBttn();
+
             Assert.AreEqual("https://www.calc.ru/kalkulyator-kalorii.html", Driver.Url);
-            page.ChoosePhysicalActivityDegree("5 раз в неделю");
-            page.EnterAge("35");
-            page.EnterWeight("85");
-            page.EnterHeight("185");
-            page.ClickSubmitBttn();
             Assert.AreEqual("3028 ккал/день", page.GetDailyCaloriesAmount().Text);
         }
 
