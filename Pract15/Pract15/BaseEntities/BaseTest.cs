@@ -15,6 +15,8 @@ namespace Pract15
         protected TVPage TVPage;
         protected ComparisonPage ComparisonPage;
         protected WebDriverWait Wait;
+        protected GooglePlayPage GooglePlayPage;
+        protected AppleStorePage AppleStorePage;
 
         [SetUp]
         public void Setup()
@@ -23,6 +25,8 @@ namespace Pract15
             Driver.Manage().Window.Maximize();
             TVPage = new TVPage(Driver);
             ComparisonPage = new ComparisonPage(Driver);
+            GooglePlayPage = new GooglePlayPage(Driver);
+            AppleStorePage = new AppleStorePage(Driver);
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
         }
 
