@@ -18,6 +18,7 @@ namespace Pract12
         public void Test1()
         {
             CalcLaminatePage page = new CalcLaminatePage(Driver);
+
             page.OpenCalcLaminatePage()
                 .ChooseLayingMethod("с использованием отрезанного элемента")
                 .EnterRoomLength("500")
@@ -26,6 +27,7 @@ namespace Pract12
                 .EnterPanelWidth("200")
                 .ChooseLayingDirection("по ширине комнаты")
                 .ClickCalculateButton();
+
             Assert.AreEqual("https://calc.by/building-calculators/laminate.html", Driver.Url);
             Assert.AreEqual("53", page.GetRequiredBoardsNumber().Text);
             Assert.AreEqual("7", page.GetPackagesNumber().Text);
