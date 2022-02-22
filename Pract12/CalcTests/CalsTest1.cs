@@ -12,20 +12,20 @@ namespace Pract12
 {
     class CalsTest1
     {
-        private IWebDriver driver;
+        private IWebDriver Driver;
 
         [SetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver();
+            Driver = new ChromeDriver();
         }
 
         [Test]
         public void Test1()
         {
-            CalcLaminatePage page = new CalcLaminatePage(driver);
+            CalcLaminatePage page = new CalcLaminatePage(Driver);
             page.OpenCalcLaminatePage();
-            Assert.AreEqual("https://calc.by/building-calculators/laminate.html", driver.Url);
+            Assert.AreEqual("https://calc.by/building-calculators/laminate.html", Driver.Url);
             page.ChooseLayingMethod("с использованием отрезанного элемента");
             page.EnterRoomLength("500");
             page.EnterRoomWidth("400");
@@ -40,7 +40,7 @@ namespace Pract12
         [TearDown]
         public void TearDown()
         {
-            driver.Quit();
+            Driver.Quit();
         }
     }
 }
