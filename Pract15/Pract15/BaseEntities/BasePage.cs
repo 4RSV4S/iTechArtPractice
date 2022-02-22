@@ -9,14 +9,14 @@ namespace Pract15
     public abstract class BasePage
     {
         protected string BaseURL = "https://catalog.onliner.by/";
-        protected static IWebDriver Driver;
+        protected IWebDriver Driver;
 
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
         }
 
-        public void MoveToElement(IWebElement element)
+        public void MoveTo(IWebElement element)
         {
             Actions action = new Actions(Driver);
             action.MoveToElement(element).Click().Build().Perform();
