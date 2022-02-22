@@ -15,17 +15,50 @@ namespace Pract15.Tests
         [Test]
         public void Scenario1()
         {
-            TVPage tvPage = new TVPage(Driver);
+            TVPage.LabelList[0].Click();
+            TVPage.LabelList[1].Click();
 
-            tvPage.LabelList[0].Click();
-            Assert.IsTrue(tvPage.InputList[0].Selected);
-            tvPage.LabelList[1].Click();
-            Assert.IsTrue(tvPage.InputList[1].Selected);
+            Assert.IsTrue(TVPage.InputList[0].Selected);
+            Assert.IsTrue(TVPage.InputList[1].Selected);
 
-            ComparisonPage comparisonPage = new ComparisonPage(Driver);
-            comparisonPage.Button_Compare.Click();
-            comparisonPage.MoveToElement(comparisonPage.Span_Cell_ScreenВiagonal);
-            Thread.Sleep(6000);
+            TVPage.Button_Compare.Click();
+            ComparisonPage.MoveTo(ComparisonPage.Td_Cell_ScreenDiagonal);
+
+            var isSpanEnabled = Wait.Until(d => ComparisonPage.Span_Cell_ScreenDiagonal.Enabled);
+            
+            if (isSpanEnabled)
+            {
+                ComparisonPage.Span_Cell_ScreenDiagonal.Click();
+            }
+            
+            var isTableTipDisplayed = Wait.Until(d => ComparisonPage.Div_TableTip.Displayed);
+            
+            if (isTableTipDisplayed)
+            {
+                ComparisonPage.Span_Cell_ScreenDiagonal.Click();
+            }
+            
+            var isTableTipNotDisplayed = Wait.Until(d =>
+            {
+                if (ComparisonPage.Div_TableTip.Displayed)
+                {
+                    return false;
+                }
+                return true;
+            });
+
+            if (isTableTipNotDisplayed)
+            {
+                ComparisonPage.A_DeleteList[0].Click();
+            }
+
+            var isPageLoaded = Wait.Until(d =>
+            {
+                var result = ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState");
+                return result.Equals("complete");
+            });
+
+            Assert.IsTrue(isPageLoaded);
         }
     }
 }
