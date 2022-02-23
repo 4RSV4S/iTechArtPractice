@@ -15,6 +15,7 @@ namespace Pract15.Tests
         [Test]
         public void Scenario1()
         {
+            TVPage.OpenPage();
             TVPage.LabelList[0].Click();
             TVPage.LabelList[1].Click();
 
@@ -64,39 +65,39 @@ namespace Pract15.Tests
         [Test]
         public void Scenario2()
         {
-            //1,2
+            TVPage.OpenPage();
+
             TVPage.AppleStoreLink.Click();
             Wait.Until(d => d.WindowHandles.Count == 2);
-            //3
+
             Driver.SwitchTo().Window(Driver.WindowHandles[0]);
             TVPage.GooglePlayLink.Click();
-            //4
+
             Wait.Until(d => d.WindowHandles.Count == 3);
-            //5
+
             Driver.SwitchTo().Window(Driver.WindowHandles[2]);
-            //6
+
             var isPageLoaded = Wait.Until(d =>
             {
                 var result = ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState");
                 return result.Equals("complete");
             });
-            //7
+
             if (isPageLoaded)
             {
                 GooglePlayPage.MoreLink.Click(); 
             }
-            //9
+
             Driver.SwitchTo().Window(Driver.WindowHandles[1]);
-            //10
+
             AppleStorePage.MoreLink.Click();
-            //11
+
             Driver.Close();
-            //12
+
             Driver.SwitchTo().Window(Driver.WindowHandles[0]);
-            //13
+
             Driver.SwitchTo().Frame(TVPage.IFrame_GoogleAds);
             TVPage.AdLink.Click();
-            //14 TearDown
         }
     }
 }

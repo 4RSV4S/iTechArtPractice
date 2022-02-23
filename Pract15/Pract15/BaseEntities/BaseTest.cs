@@ -17,6 +17,7 @@ namespace Pract15
         protected WebDriverWait Wait;
         protected GooglePlayPage GooglePlayPage;
         protected AppleStorePage AppleStorePage;
+        protected MainPage MainPage;   
 
         [SetUp]
         public void Setup()
@@ -27,6 +28,7 @@ namespace Pract15
             ComparisonPage = new ComparisonPage(Driver);
             GooglePlayPage = new GooglePlayPage(Driver);
             AppleStorePage = new AppleStorePage(Driver);
+            MainPage = new MainPage(Driver);   
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
         }
 

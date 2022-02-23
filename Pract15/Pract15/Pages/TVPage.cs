@@ -20,12 +20,10 @@ namespace Pract15
 
         public TVPage(IWebDriver driver) : base(driver)
         {
-            OpenPage();
         }
 
         public void OpenPage()
         {
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             Driver.Navigate().GoToUrl(BaseURL + END_POINT);
         }
 
