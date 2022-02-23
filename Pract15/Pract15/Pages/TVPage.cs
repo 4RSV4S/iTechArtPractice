@@ -15,7 +15,6 @@ namespace Pract15
         private readonly By A_GooglePlayLinkBy = By.XPath("//div[@id='schema-filter']//a[contains(@href, 'google')]");
         private readonly By IFrame_GoogleAdsBy = By.Id("google_ads_iframe_/282428283/new_catalog_100x90_2_0");
         private readonly By A_AdLinkBy = By.Id("aw0");
-        private readonly By Div_SimularAppsBy = By.XPath("//div[contains(@class, 'ZmHEEd ')]/div[contains(@class, 'ImZGtf mpg5gc')]");
         private string END_POINT = "tv";
 
         public TVPage(IWebDriver driver) : base(driver)
@@ -34,6 +33,5 @@ namespace Pract15
         public IWebElement GooglePlayLink => Driver.FindElement(A_GooglePlayLinkBy);
         public IWebElement IFrame_GoogleAds => Driver.FindElement(IFrame_GoogleAdsBy);
         public IWebElement AdLink => Driver.FindElement(A_AdLinkBy);
-        public IList<IWebElement> SimularAppsList => Driver.FindElements(Div_SimularAppsBy);
     }
 }
