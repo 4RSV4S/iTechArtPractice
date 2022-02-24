@@ -4,7 +4,7 @@ using System.Text;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Pract15
+namespace Pract15.Tests
 {
     [TestFixture]
     public class MainPageTest : BaseTest

@@ -17,7 +17,7 @@ namespace Pract15
         protected WebDriverWait Wait;
         protected GooglePlayPage GooglePlayPage;
         protected AppleStorePage AppleStorePage;
-        protected MainPage MainPage;   
+        protected MainPage MainPage;
 
         [SetUp]
         public void Setup()

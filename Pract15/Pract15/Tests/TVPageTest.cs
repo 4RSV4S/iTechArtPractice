@@ -6,12 +6,15 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
+using NLog;
 
 namespace Pract15.Tests
 {
     [TestFixture]
     public class TVPageTest : BaseTest
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         [Test]
         public void Scenario1()
         {
@@ -86,7 +89,7 @@ namespace Pract15.Tests
             if (isPageLoaded)
             {
                 GooglePlayPage.MoreLink.Click();
-                //Log($"Amount of simular apps is {GooglePlayPage.SimularAppsList.Count}");
+                Logger.Info($"Amount of simular apps is {GooglePlayPage.SimularAppsList.Count}");
             }
 
             Driver.SwitchTo().Window(Driver.WindowHandles[1]);

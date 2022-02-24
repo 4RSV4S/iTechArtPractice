@@ -1,0 +1,5 @@
+﻿2022-02-24 17:48:40.6689|INFO|Pract15.Tests.TVPageTest|Amount of simular apps is 7
+2022-02-24 17:52:30.8426|INFO|Pract15.Tests.TVPageTest|Amount of simular apps is 7
+2022-02-24 18:00:53.9587|INFO|Pract15.Tests.TVPageTest|Amount of simular apps is 7
+2022-02-24 18:06:08.1183|INFO|Pract15.Tests.TVPageTest|Amount of simular apps is 7
+2022-02-24 18:09:18.9406|INFO|Pract15.Tests.TVPageTest|Amount of simular apps is 7
