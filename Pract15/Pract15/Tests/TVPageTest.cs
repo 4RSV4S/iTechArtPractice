@@ -85,7 +85,8 @@ namespace Pract15.Tests
 
             if (isPageLoaded)
             {
-                GooglePlayPage.MoreLink.Click(); 
+                GooglePlayPage.MoreLink.Click();
+                //Log($"Amount of simular apps is {GooglePlayPage.SimularAppsList.Count}");
             }
 
             Driver.SwitchTo().Window(Driver.WindowHandles[1]);
