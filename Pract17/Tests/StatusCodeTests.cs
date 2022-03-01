@@ -10,7 +10,7 @@ namespace Pract17.Tests
     {
         [Test]
         [TestCase(4165, HttpStatusCode.OK)]
-        [TestCase(1, HttpStatusCode.NotFound)]
+        [TestCase(0, HttpStatusCode.NotFound)]
         public async Task GETStatusCodeTest(int userId, HttpStatusCode expectedHttpStatusCode)
         {
             RestClient client = new RestClient("https://gorest.co.in");
@@ -35,7 +35,7 @@ namespace Pract17.Tests
 
             RestResponse response =  await client.ExecuteAsync(request);
 
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created) | Is.EqualTo(HttpStatusCode.UnprocessableEntity));
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
         }
 
         [Test]
