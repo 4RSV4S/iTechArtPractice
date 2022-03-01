@@ -12,7 +12,7 @@ namespace Pract17.Tests
     public class AuthentificationTests
     {
         [Test]
-        public async Task AuthentificationTest_TokenAdded()
+        public async Task PositiveAuthentificationTest()
         {
             RestClient client = new RestClient("https://gorest.co.in");
             RestRequest request = new RestRequest($"public/v2/users/", Method.Post);
@@ -24,11 +24,11 @@ namespace Pract17.Tests
 
             RestResponse response = await client.ExecuteAsync(request);
 
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created) | Is.EqualTo(HttpStatusCode.UnprocessableEntity));
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
         }
         
         [Test]
-        public async Task AuthentificationTest_TokenNotAdded()
+        public async Task NegativeAuthentificationTest()
         {
             RestClient client = new RestClient("https://gorest.co.in");
             RestRequest request = new RestRequest($"public/v2/users/", Method.Post);
